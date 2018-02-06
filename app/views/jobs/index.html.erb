@@ -11,6 +11,8 @@ Company Contacts:
   <%= contact.email %>
 <% end %>
 
+New Contact:
+
 <%= form_for [@company, @contact] do |f| %>
   <%= f.label :full_name %>
   <%= f.text_field :full_name %>

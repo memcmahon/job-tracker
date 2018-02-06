@@ -9,7 +9,7 @@ describe "user can create company contacts" do
       expect(page).to have_content("Company Contacts:")
       expect(page).to have_content("New Contact:")
 
-      fill_in("cotact[full_name]", with: "Bruce Banner")
+      fill_in("contact[full_name]", with: "Bruce Banner")
       fill_in("contact[position]", with: "The Hulk")
       fill_in("contact[email]", with: "jollygreengiant@marvel.com")
       click_on("Create Contact")
