@@ -1,0 +1,8 @@
+Title: <%= @category.title %>
+<br>
+
+<ul>Jobs:
+  <% @category.jobs.each do |job| %>
+    <li><%= job.title %></li>
+  <% end %>
+</ul>
