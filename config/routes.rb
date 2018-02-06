@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :companies do
+    resources :contacts, only: [:index, :new, :create]
     resources :jobs, except: [:show]
   end
 
