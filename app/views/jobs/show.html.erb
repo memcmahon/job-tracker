@@ -21,9 +21,14 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
 <h3>Comments: </h3>
 
+<% @comments.each do |comment| %>
+  <%= comment.subject %><br>
+  Created At: <%= comment.created_at %>
+<% end %>
+
 <%= form_for [@job, @comment] do |f| %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.label :subject %>
+  <%= f.text_field :subject %>
 
   <%= f.submit %>
 <% end %>

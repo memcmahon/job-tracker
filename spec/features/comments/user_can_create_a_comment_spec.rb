@@ -10,7 +10,7 @@ describe "user can create comments" do
       visit job_path(job)
 
       expect(page).to have_content("Comments:")
-      fill_in("comment[description]", with: "Call hiring manager next week")
+      fill_in("comment[subject]", with: "Call hiring manager next week")
       click_on("Create Comment")
 
       expect(current_path).to eq(job_path(job))
