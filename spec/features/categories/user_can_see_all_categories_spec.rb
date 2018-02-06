@@ -38,6 +38,8 @@ describe "user sees a list of all categories" do
       expect(page).to have_link("Delete")
 
       click_on "Delete", match: :first
+      expect(page).to have_content("Finance")
+      expect(page).to have_content("Education")
       expect(page).to_not have_link("Web Development")
       expect(Category.count).to eq(2)
     end
