@@ -15,6 +15,7 @@ describe "user can create comments" do
 
       expect(current_path).to eq(job_path(job))
       expect(page).to have_content("Call hiring manager next week")
+      expect(page).to have_content("Created At: ")
     end
   end
 end
