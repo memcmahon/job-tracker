@@ -16,4 +16,12 @@ describe Category do
       expect(category_2).to be_invalid
     end
   end
+
+  describe "Relationships" do
+    it "has_many jobs" do
+      category_1 = Category.create!(title: "Web Development")
+
+      expect(category_1).to respond_to(:jobs)
+    end
+  end
 end
