@@ -6,4 +6,8 @@ class CategoriesController < ApplicationController
   def new
     @category = Category.new
   end
+
+  # def create
+  #   binding.pry
+  # end
 end
