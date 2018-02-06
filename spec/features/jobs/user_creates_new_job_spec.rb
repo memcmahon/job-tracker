@@ -15,12 +15,9 @@ describe "User creates a new job" do
     click_button "Create"
 
 
-    expect(current_path).to eq("/companies/#{company.id}/jobs/#{Job.last.id}")
+    expect(current_path).to eq("/companies/#{company.id}/jobs")
     expect(page).to have_content("ESPN")
     expect(page).to have_content("Developer")
-    expect(page).to have_content("80")
-    expect(page).to have_content("Denver")
-    expect(page).to have_content("Entertainment")
   end
 
   scenario "user can link to create category page" do

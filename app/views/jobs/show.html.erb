@@ -18,3 +18,17 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <%= link_to "Edit", edit_company_job_path(@job.company, @job) %>
 
 <%= link_to "Delete", company_job_path(@job.company, @job), method: "delete" %>
+
+<h3>Comments: </h3>
+
+<% @comments.reverse.each do |comment| %>
+  <%= comment.subject %><br>
+  Created At: <%= comment.created_at %><br>
+<% end %>
+
+<%= form_for [@job, @comment] do |f| %>
+  <%= f.label :subject %>
+  <%= f.text_field :subject %>
+
+  <%= f.submit %>
+<% end %>

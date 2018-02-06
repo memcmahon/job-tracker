@@ -11,7 +11,7 @@ describe "User edits an existing job" do
                                  city: "Denver",
                                  category_id: category.id)
 
-      visit company_job_path(company, job)
+      visit job_path(job)
 
       click_on "Edit"
 
