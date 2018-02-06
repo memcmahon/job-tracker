@@ -4,10 +4,12 @@ describe "User edits an existing job" do
   describe "user visits job show page" do
     it "they can edit job attributes" do
       company = Company.create!(name: "ESPN")
+      category = Category.create!(title: "Entertainment")
       job = company.jobs.create!(title: "Developer",
                                  description: "So fun!",
                                  level_of_interest: 80,
-                                 city: "Denver")
+                                 city: "Denver",
+                                 category_id: category.id)
 
       visit company_job_path(company, job)
 
