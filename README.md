@@ -34,7 +34,7 @@ The rubric below describes additional functionality that you will need to add to
 
 [X] When the user successfully creates a Category they are shown a page with the Category title.
 
-[ ] When the user tries to create a Category that already exists, they are brought back to the page with the form to create a Category.
+[X] When the user tries to create a Category that already exists, they are brought back to the page with the form to create a Category.
 
 [ ] The user can view a list of all Categories on a single page, and each Category can be deleted from that page. There is also a link to “Edit” each Category, which takes the user to a form where they can update the Category.
 
