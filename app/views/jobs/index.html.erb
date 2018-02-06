@@ -7,7 +7,7 @@ All Jobs for <strong><%= @company.name %></strong>
 Company Contacts:
 
 <% @contacts.each do |contact| %>
-  <%= contact.name %>, <%= contact.position %><br>
+  <%= contact.full_name %>, <%= contact.position %><br>
   <%= contact.email %>
 <% end %>
 
