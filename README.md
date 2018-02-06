@@ -36,7 +36,7 @@ The rubric below describes additional functionality that you will need to add to
 
 [X] When the user tries to create a Category that already exists, they are brought back to the page with the form to create a Category.
 
-[ ] The user can view a list of all Categories on a single page, and each Category can be deleted from that page. There is also a link to “Edit” each Category, which takes the user to a form where they can update the Category.
+[X] The user can view a list of all Categories on a single page, and each Category can be deleted from that page. There is also a link to “Edit” each Category, which takes the user to a form where they can update the Category.
 
 [ ] When the user creates a new Job, they are required to select its Category from a drop down menu of existing categories. They also see a link to create a new Category.
 
