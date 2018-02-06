@@ -6,7 +6,7 @@ describe "user can create company contacts" do
       company = Company.create!(name: "ESPN")
       visit company_path(company)
 
-      expect(page).to have_content("Contacts:")
+      expect(page).to have_content("Company Contacts:")
       expect(page).to have_content("New Contact:")
 
       fill_in("cotact[full name]", with: "Bruce Banner")

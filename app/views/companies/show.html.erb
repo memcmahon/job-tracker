@@ -3,3 +3,10 @@ All Jobs for <strong><%= @company.name %></strong>
 <% @company.jobs.each do |job| %>
   <ul><%= job.title %></ul>
 <% end %>
+
+Company Contacts:
+
+<% @contacts.each do |contact| %>
+  <%= contact.name %>, <%= contact.position %><br>
+  <%= contact.email %>
+<% end %>
