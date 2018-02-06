@@ -21,11 +21,11 @@ describe "user sees a list of all categories" do
       visit categories_path
 
       expect(page).to have_content("Click on Category Name to Edit")
-      expect(page).to have_link("Web Development")
-      expect(page).to have_link("Finance")
-      expect(page).to have_link("Education")
+      expect(page).to have_link("Edit Web Development")
+      expect(page).to have_link("Edit Finance")
+      expect(page).to have_link("Edit Education")
 
-      click_on "Education"
+      click_on "Edit Education"
       expect(current_path).to eq(edit_category_path(category_3))
     end
 
