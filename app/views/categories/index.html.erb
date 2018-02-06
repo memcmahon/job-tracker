@@ -1,0 +1,7 @@
+<h3>All Categories</h3>
+
+<h6><%= link_to "Create New Category", new_category_path %></h6>
+
+<% @categories.each do |category| %>
+  <%= link_to category.title, category_path(category) %>
+<% end %>
