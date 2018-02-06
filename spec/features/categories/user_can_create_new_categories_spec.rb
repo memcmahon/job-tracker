@@ -22,4 +22,17 @@ describe "users can create categories" do
       expect(page).to have_content("Healthcare")
     end
   end
+
+  describe "user can not create category with non-unique name" do
+    it "user is sent back to new category form" do
+      category = Category.create!(title: "Web Development")
+      visit new_category_path
+
+      fill_in "category[title]", with: "Web Development"
+      click_on "Create Category"
+
+      expect(current_path).to eq(new_category_path)
+      expect(page).to have_content("Create a new category here!")
+    end
+  end
 end
