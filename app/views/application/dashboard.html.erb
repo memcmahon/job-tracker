@@ -4,3 +4,10 @@ Count of Jobs by Interest Levels:
   <li><%= key %>: <%= value %></li>
 <% end %>
 </ul>
+
+Top Companies by Average Score:
+<ul>
+  <% @companies.top_by_average_level.each do |company| %>
+    <li><%= company.name %></li>
+  <% end %>
+</ul>

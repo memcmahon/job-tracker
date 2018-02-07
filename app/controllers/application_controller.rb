@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
 
   def dashboard
     @jobs = Job.all
+    @companies = Company.all
   end
 end

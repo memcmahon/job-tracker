@@ -37,6 +37,7 @@ describe "user sees application dashboard" do
       expect(page).to have_content("DISNEY")
       expect(page).to have_content("MTV")
       expect(page).to have_content("ABC")
+      expect(page).to_not have_content("ESPN")
     end
   end
 end
