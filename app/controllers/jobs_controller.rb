@@ -1,9 +1,12 @@
 class JobsController < ApplicationController
   def index
-    @company = Company.find(params[:company_id])
-    @contacts = @company.contacts
-    @contact = @company.contacts.new()
-    @jobs = @company.jobs
+    if params[:sort] == "location"
+      @jobs = Job.all.sort_by_location
+    elsif params[:sort]
+      @jobs = Job.where(city: params[:sort])
+    else
+      @jobs = Job.all
+    end
   end
 
   def new
@@ -17,7 +20,7 @@ class JobsController < ApplicationController
     @job = @company.jobs.new(job_params)
     if @job.save
       flash[:success] = "You created #{@job.title} at #{@company.name}"
-      redirect_to company_jobs_path(@company)
+      redirect_to company_path(@company)
     end
   end
 
@@ -37,7 +40,7 @@ class JobsController < ApplicationController
     @company = Company.find(params[:company_id])
     @job = @company.jobs.find(params[:id])
     if @job.update(job_params)
-      redirect_to company_jobs_path(@company)
+      redirect_to company_path(@company)
     end
   end
 
@@ -45,7 +48,7 @@ class JobsController < ApplicationController
     @company = Company.find(params[:company_id])
     Job.destroy(params[:id])
 
-    redirect_to company_jobs_path
+    redirect_to company_path(@company)
   end
 
   private
