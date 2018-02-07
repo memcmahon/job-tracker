@@ -66,7 +66,6 @@ describe "user sees application dashboard" do
 
       click_on("Denver")
 
-      expect(current_path).to eq('/jobs?location=Denver')
       expect(page).to have_content("Senior Developer")
       expect(page).to_not have_content("Junior Developer")
     end

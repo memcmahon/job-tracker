@@ -15,6 +15,6 @@ Top Companies by Average Score:
 Job Count by Location:
 <ul>
   <% @jobs.count_by_location.each do |key, value| %>
-    <li><%= key %>: <%= value %></li>
+    <li><%= link_to key, "/jobs?location=#{key}" %>: <%= value %></li>
   <% end %>
 </ul>
