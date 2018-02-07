@@ -7,4 +7,7 @@ class ApplicationController < ActionController::Base
     @jobs = Job.all
     @companies = Company.all
   end
+
+  def home
+  end
 end
