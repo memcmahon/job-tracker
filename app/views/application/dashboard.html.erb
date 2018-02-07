@@ -1,20 +1,28 @@
-<h1>Count of Jobs by Interest Levels:</h1>
-<ul>
-<% @jobs.count_by_interest.each do |key, value| %>
-  <li><%= key %>: <%= value %></li>
-<% end %>
-</ul>
+<section class="dashboard">
+  <div>
+    <h1>Count of Jobs by Interest Levels:</h1>
+    <ul>
+    <% @jobs.count_by_interest.each do |key, value| %>
+      <li><%= key %>: <%= value %></li>
+    <% end %>
+    </ul>
+  </div>
 
-<h1>Top Companies by Average Score:</h1>
-<ul>
-  <% @companies.top_by_average_level.each do |company| %>
-    <li><%= company.name %></li>
-  <% end %>
-</ul>
+  <div>
+    <h1>Top Companies by Average Score:</h1>
+    <ul>
+      <% @companies.top_by_average_level.each do |company| %>
+        <li><%= company.name %></li>
+      <% end %>
+    </ul>
+  </div>
 
-<h1>Job Count by Location:</h1>
-<ul>
-  <% @jobs.count_by_location.each do |key, value| %>
-    <li><%= link_to key, "/jobs?location=#{key}" %>: <%= value %></li>
-  <% end %>
-</ul>
+  <div>
+    <h1>Job Count by Location:</h1>
+    <ul>
+      <% @jobs.count_by_location.each do |key, value| %>
+        <li><%= link_to key, "/jobs?location=#{key}" %>: <%= value %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
