@@ -1,0 +1,6 @@
+Count of Jobs by Interest Levels:
+<ul>
+<% @jobs.count_by_interest.each do |key, value| %>
+  <li><%= key %>: <%= value %></li>
+<% end %>
+</ul>
