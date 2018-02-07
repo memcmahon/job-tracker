@@ -8,4 +8,8 @@ class Job < ApplicationRecord
   def self.count_by_interest
     group(:level_of_interest).order(level_of_interest: :desc).count
   end
+
+  def self.count_by_location
+    group(:city).count
+  end
 end

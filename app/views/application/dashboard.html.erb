@@ -11,3 +11,10 @@ Top Companies by Average Score:
     <li><%= company.name %></li>
   <% end %>
 </ul>
+
+Job Count by Location:
+<ul>
+  <% @jobs.count_by_location.each do |key, value| %>
+    <li><%= key %>: <%= value %></li>
+  <% end %>
+</ul>

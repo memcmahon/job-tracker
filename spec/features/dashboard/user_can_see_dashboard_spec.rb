@@ -55,5 +55,20 @@ describe "user sees application dashboard" do
       expect(page).to have_content("Denver: 3")
       expect(page).to have_content("Austin: 2")
     end
+
+    it "has links to location job index" do
+      company = Company.create!(name: "ESPN")
+      category = Category.create!(title: "Entertainment")
+      job_1 = company.jobs.create!(title: "Senior Developer", description: "So fun!", level_of_interest: 80, city: "Denver", category_id: category.id)
+      job_2 = company.jobs.create!(title: "Junior Developer", description: "So fun!", level_of_interest: 80, city: "Austin", category_id: category.id)
+
+      visit dashboard_path
+
+      click_on("Denver")
+
+      expect(current_path).to eq('/jobs?location=Denver')
+      expect(page).to have_content("Senior Developer")
+      expect(page).to_not have_content("Junior Developer")
+    end
   end
 end

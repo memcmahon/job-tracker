@@ -1,9 +1,9 @@
 class JobsController < ApplicationController
   def index
-    if params[:sort] == "location"
+    if params[:sort]
       @jobs = Job.all.sort_by_location
-    elsif params[:sort]
-      @jobs = Job.where(city: params[:sort])
+    elsif params[:location]
+      @jobs = Job.where(city: params[:location])
     else
       @jobs = Job.all
     end
