@@ -1,5 +1,5 @@
 All Jobs
 
 <% @jobs.each do |job| %>
-  <ul><%= job.city %>: <%= link_to job.title, job_path(job) %> at <%= job.company.name %></ul>
+  <ul><%= job.city %>: <%= link_to job.title, job_path(job) %> at <%= job.company.name %>, <%= job.level_of_interest %></ul>
 <% end %>
