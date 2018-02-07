@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'companies#index'
+  get '/dashboard', to: 'application#dashboard'
 
   resources :categories
 
