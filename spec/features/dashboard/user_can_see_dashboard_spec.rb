@@ -15,5 +15,28 @@ describe "user sees application dashboard" do
       expect(page).to have_content("80: 2")
       expect(page).to have_content("90: 1")
     end
+
+    it "they see top three companies by interest level" do
+      company_1 = Company.create!(name: "ESPN")
+      company_2 = Company.create!(name: "ABC")
+      company_3 = Company.create!(name: "MTV")
+      company_4 = Company.create!(name: "DISNEY")
+      category = Category.create!(title: "Entertainment")
+      job_1 = company_4.jobs.create!(title: "Developer", description: "So fun!", level_of_interest: 80, city: "Denver", category_id: category.id)
+      job_2 = company_4.jobs.create!(title: "Junior Developer", description: "So fun!", level_of_interest: 90, city: "Denver", category_id: category.id)
+      job_3 = company_3.jobs.create!(title: "Developer", description: "So fun!", level_of_interest: 70, city: "Denver", category_id: category.id)
+      job_4 = company_3.jobs.create!(title: "Junior Developer", description: "So fun!", level_of_interest: 80, city: "Denver", category_id: category.id)
+      job_5 = company_2.jobs.create!(title: "Developer", description: "So fun!", level_of_interest: 60, city: "Denver", category_id: category.id)
+      job_6 = company_2.jobs.create!(title: "Junior Developer", description: "So fun!", level_of_interest: 70, city: "Denver", category_id: category.id)
+      job_7= company_1.jobs.create!(title: "Developer", description: "So fun!", level_of_interest: 50, city: "Denver", category_id: category.id)
+      job_8 = company_1.jobs.create!(title: "Junior Developer", description: "So fun!", level_of_interest: 60, city: "Denver", category_id: category.id)
+
+      visit dashboard_path
+
+      expect(page).to have_content("Top Companies by Average Score:")
+      expect(page).to have_content("DISNEY")
+      expect(page).to have_content("MTV")
+      expect(page).to have_content("ABC")
+    end
   end
 end
