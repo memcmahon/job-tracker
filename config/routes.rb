@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get '/', to: 'application#home'
   get '/dashboard', to: 'application#dashboard'
 
