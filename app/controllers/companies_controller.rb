@@ -1,10 +1,11 @@
 class CompaniesController < ApplicationController
+  before_action :set_company, only: [:show, :edit, :update, :destroy]
+
   def index
     @companies = Company.all
   end
 
   def show
-    call_company
     @jobs = @company.jobs
     @contacts = @company.contacts
     @contact = @company.contacts.new()
@@ -25,11 +26,9 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    call_company
   end
 
   def update
-    call_company
     @company.update(company_params)
     if @company.save
       flash[:success] = "#{@company.name} updated!"
@@ -40,7 +39,6 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
-    call_company
     @company.destroy
     flash[:success] = "#{company.name} was successfully deleted!"
     redirect_to companies_path
@@ -49,7 +47,7 @@ class CompaniesController < ApplicationController
 
   private
 
-  def call_company
+  def set_company
     @company = Company.find(params[:id])
   end
 
