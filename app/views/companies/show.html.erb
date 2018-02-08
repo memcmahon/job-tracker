@@ -1,27 +1,40 @@
-All Jobs for <strong><%= @company.name %></strong>
+<section>
+  <h2>All Jobs for <%= @company.name %></h2>
 
-<% @jobs.each do |job| %>
-  <ul><%= link_to job.title, job_path(job) %> at <%= job.company.name %></ul>
-<% end %>
+  <section class ="grid">
+    <% @jobs.each do |job| %>
+      <div>
+        <%= link_to job.title, job_path(job) %> at <%= job.company.name %></ul>
+      </div>
+    <% end %>
+  </section>
 
-Company Contacts:
+  <section>
+    <div>
 
-<% @contacts.each do |contact| %>
-  <%= contact.full_name %>, <%= contact.position %><br>
-  <%= contact.email %>
-<% end %>
+      Company Contacts:
 
-New Contact:
+      <% @contacts.each do |contact| %>
+        <%= contact.full_name %>, <%= contact.position %><br>
+        <%= contact.email %>
+      <% end %>
+    </div>
 
-<%= form_for [@company, @contact] do |f| %>
-  <%= f.label :full_name %>
-  <%= f.text_field :full_name %>
+    <div>
+      New Contact:
 
-  <%= f.label :position %>
-  <%= f.text_field :position %>
+      <%= form_for [@company, @contact] do |f| %>
+        <%= f.label :full_name %>
+        <%= f.text_field :full_name %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+        <%= f.label :position %>
+        <%= f.text_field :position %>
 
-  <%= f.submit %>
-<% end %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </section>
+</section>
