@@ -31,7 +31,7 @@ nav a {
 }
 
 
-section, .edit_job {
+section, .edit_job, {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,5 +45,17 @@ section p {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: space-around;
+}
+
+.grid {
+  div {
+    width: 25%;
+    text-align: center;
+  }
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
 }

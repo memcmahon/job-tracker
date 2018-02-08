@@ -1,10 +1,14 @@
-<h3>All Categories</h3>
+<section>
+  <%= link_to "Create New Category", new_category_path %>
+  <h2>All Categories</h2>
 
-<h6><%= link_to "Create New Category", new_category_path %></h6>
-<h5>Click on Category Name to Edit</h5>
-
-<% @categories.each do |category| %>
-  <%= link_to category.title, category_path(category) %>
-  <%= link_to "Edit #{category.title}", edit_category_path(category) %>
-  <%= link_to "Delete", category_path(category), method: :delete %>
-<% end %>
+  <section class="grid">
+    <% @categories.each do |category| %>
+      <div>
+        <h3><%= category.title %></h3>
+        <%= link_to "Edit #{category.title}", edit_category_path(category) %>
+        <%= link_to "Delete", category_path(category), method: :delete %>
+      </div>
+    <% end %>
+  </section>
+</section>
