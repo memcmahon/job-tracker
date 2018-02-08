@@ -1,4 +1,5 @@
 <section>
+  <%= link_to "New Job", new_company_job_path(@company) %>
   <h2>All Jobs for <%= @company.name %></h2>
 
   <section class ="grid">
@@ -12,7 +13,7 @@
   <section>
     <div>
 
-      Company Contacts:
+      <h3>Company Contacts:</h3>
 
       <% @contacts.each do |contact| %>
         <%= contact.full_name %>, <%= contact.position %><br>
@@ -21,7 +22,7 @@
     </div>
 
     <div>
-      New Contact:
+      <h3>New Contact:</h3>
 
       <%= form_for [@company, @contact] do |f| %>
         <%= f.label :full_name %>
