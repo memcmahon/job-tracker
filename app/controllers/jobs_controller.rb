@@ -11,14 +11,20 @@ class JobsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.new()
+    @job = Job.find(params[:id])
+    @comments = @job.comments
+  end
+
   def new
+    call_company
     @categories = Category.all
-    @company = Company.find(params[:company_id])
     @job = @company.jobs.new
   end
 
   def create
-    @company = Company.find(params[:company_id])
+    call_company
     @job = @company.jobs.new(job_params)
     if @job.save
       flash[:success] = "You created #{@job.title} at #{@company.name}"
@@ -26,34 +32,36 @@ class JobsController < ApplicationController
     end
   end
 
-  def show
-    @comment = Comment.new()
-    @job = Job.find(params[:id])
-    @comments = @job.comments
-  end
-
   def edit
+    call_company
+    call_company_job
     @categories = Category.all
-    @company = Company.find(params[:company_id])
-    @job = @company.jobs.find(params[:id])
   end
 
   def update
-    @company = Company.find(params[:company_id])
-    @job = @company.jobs.find(params[:id])
+    call_company
+    call_company_job
     if @job.update(job_params)
       redirect_to company_path(@company)
     end
   end
 
   def destroy
-    @company = Company.find(params[:company_id])
+    call_company
     Job.destroy(params[:id])
 
     redirect_to company_path(@company)
   end
 
   private
+
+  def call_company_job
+    @job = @company.jobs.find(params[:id])
+  end
+
+  def call_company
+    @company = Company.find(params[:company_id])
+  end
 
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
