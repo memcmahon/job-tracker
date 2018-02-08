@@ -11,7 +11,7 @@ describe "user sees jobs by interest level" do
 
       visit "/jobs?sort=interest"
 
-      expect(page).to have_content("Denver: Announcer at ESPN, 80 Denver: Accountant at ESPN, 70")
+      expect(page).to have_content("Announcer at ESPN Denver level of interest: 80 Accountant at ESPN Denver level of interest: 70")
     end
   end
 end

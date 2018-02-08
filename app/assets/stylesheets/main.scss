@@ -1,0 +1,62 @@
+$pale-yellow: #FFFAE3;
+$light-gray: #FCFCFC;
+$light-aqua: #99E1D9;
+$dusty-purple: #5D576B;
+$bright-salmon: #F7567C;
+
+body {
+  color: $dusty-purple;
+  margin: 0;
+  background-color: $light-gray;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: $dusty-purple;
+}
+
+
+ul a, body a {
+  color: $dusty-purple;
+}
+
+nav a {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text {
+    align: center;
+  }
+  color: $pale-yellow;
+}
+
+
+section, .edit_job, {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section p {
+  width: 50%;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.grid {
+  div {
+    padding: 1%;
+    width: 20%;
+    text-align: center;
+  }
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

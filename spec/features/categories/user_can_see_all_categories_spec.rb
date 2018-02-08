@@ -20,7 +20,6 @@ describe "user sees a list of all categories" do
       category_3 = Category.create!(title: "Education")
       visit categories_path
 
-      expect(page).to have_content("Click on Category Name to Edit")
       expect(page).to have_link("Edit Web Development")
       expect(page).to have_link("Edit Finance")
       expect(page).to have_link("Edit Education")

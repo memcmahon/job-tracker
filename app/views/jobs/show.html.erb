@@ -1,23 +1,19 @@
-Title: <%= @job.title %>
-<br>
+<section>
 
-Description: <%= @job.description %>
-<br>
-
-Level of Interest: <%= @job.level_of_interest %>
-<br>
-
-City: <%= @job.city %>
-<br>
-
-Category: <%= @job.category.title %>
-<br>
-
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
-
+<h2>Title: <%= @job.title %></h2>
 <%= link_to "Edit", edit_company_job_path(@job.company, @job) %>
 
+<br>
+
+<div>
+  <h4>Description: <%= @job.description %></h4>
+  <h4>Level of Interest: <%= @job.level_of_interest %></h4>
+  <h4>City: <%= @job.city %></h4>
+  <h4>Category: <%= @job.category.title %></h4>
+  <h4>Company: <%= link_to @job.company.name, company_path(@job.company) %></h4>
+</div>
 <%= link_to "Delete", company_job_path(@job.company, @job), method: "delete" %>
+
 
 <h3>Comments: </h3>
 
@@ -32,3 +28,4 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
   <%= f.submit %>
 <% end %>
+</section>

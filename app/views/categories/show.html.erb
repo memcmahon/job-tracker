@@ -1,8 +1,12 @@
-Title: <%= @category.title %>
-<br>
+<section>
+  <h2><%= @category.title %></h2>
 
-<ul>Jobs:
-  <% @category.jobs.each do |job| %>
-    <li><%= job.title %></li>
-  <% end %>
-</ul>
+  <h3>Jobs</h3>
+    <section class="grid">
+      <% @category.jobs.each do |job| %>
+      <div>
+        <%= link_to job.title, job_path(job) %>
+      </div>
+      <% end %>
+  </section>
+</section>

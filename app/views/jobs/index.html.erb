@@ -1,5 +1,13 @@
-All Jobs
+<section>
+  <h2>All Jobs</h2>
 
-<% @jobs.each do |job| %>
-  <ul><%= job.city %>: <%= link_to job.title, job_path(job) %> at <%= job.company.name %>, <%= job.level_of_interest %></ul>
-<% end %>
+  <section class="grid">
+    <% @jobs.each do |job| %>
+      <div>
+        <%= link_to job.title, job_path(job) %> at <%= job.company.name %><br>
+        <%= job.city %><br>
+        level of interest: <%= job.level_of_interest %>
+      </div>
+    <% end %>
+  </section>
+</section>
