@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
+  before_action :set_company, only: [:create]
+
   def create
-    call_company
     @contact = @company.contacts.new(contact_params)
     @contact.save
     redirect_to company_path(@company)
@@ -8,7 +9,7 @@ class ContactsController < ApplicationController
 
   private
 
-  def call_company
+  def set_company
     @company = Company.find(params[:company_id])
   end
 
