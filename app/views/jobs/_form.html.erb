@@ -22,9 +22,9 @@
   <div>
     <%= f.label :category %>
     <%= f.collection_select(:category_id, @categories.all, :id, :title) %>
+    <%= link_to "Create New Category", new_category_path %>
   </div>
 
-  <%= link_to "Create New Category", new_category_path %>
   <br>
   <%= f.submit %>
 <% end %>
