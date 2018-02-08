@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "User deletes existing company" do
-  scenario "a user can delete a company" do
+  xscenario "a user can delete a company" do
     company = Company.create(name: "ESPN")
     visit companies_path
 

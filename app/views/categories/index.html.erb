@@ -5,8 +5,8 @@
   <section class="grid">
     <% @categories.each do |category| %>
       <div>
-        <h3><%= category.title %></h3>
-        <%= link_to "Edit #{category.title}", edit_category_path(category) %>
+        <h3><%= link_to category.title, category_path(category) %></h3>
+        <%= link_to "Edit #{category.title}", edit_category_path(category) %><br>
         <%= link_to "Delete", category_path(category), method: :delete %>
       </div>
     <% end %>
